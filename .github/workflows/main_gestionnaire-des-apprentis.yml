@@ -1,3 +1,6 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
 name: Build and deploy PHP app to Azure Web App - gestionnaire-des-apprentis
 
 on:
@@ -11,16 +14,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - name: Set up PHP
+      - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
 
       - name: Check if composer.json exists
-        run: test -f composer.json && echo '::set-output name=files_exists::true' || echo '::set-output name=files_exists::false'
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: 'composer.json'
 
       - name: Run composer install if composer.json exists
         if: steps.check_files.outputs.files_exists == 'true'
@@ -30,7 +35,10 @@ jobs:
         run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment job
-        run: mv release.zip $GITHUB_WORKSPACE/release.zip
+        uses: actions/upload-artifact@v3
+        with:
+          name: php-app
+          path: release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -43,14 +51,25 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        run: mv $GITHUB_WORKSPACE/release.zip .
+        uses: actions/download-artifact@v3
+        with:
+          name: php-app
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
       
       - name: Login to Azure
-        run: az login --service-principal -u ${{ secrets.AZURE_SERVICE_PRINCIPAL }} -p ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_C8DE50B89477486BBDBD0675CABF30DA }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B8F0384DDED74E70BF303B8D7613A2A8 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_2B6F16AC35564092AB63AC6CF07FC7E4 }}
 
       - name: 'Deploy to Azure Web App'
-        run: |
-          az webapp deployment source config-zip --resource-group <resource-group-name> --name <app-name> --src release.zip
+        uses: azure/webapps-deploy@v2
+        id: deploy-to-webapp
+        with:
+          app-name: 'gestionnaire-des-apprentis'
+          slot-name: 'Production'
+          package: .
+          
