@@ -5,7 +5,6 @@ namespace Model;
 use PDO;
 use PDOException;
 
-
 class Conn
 {
     private static $instance = null;
@@ -17,10 +16,11 @@ class Conn
 
     private function __construct()
     {
-        $dsn = "sqlsrv::host=" . self::$host . ";port=5432;dbname=" . self::$dbname . ";user=" . self::$username . ";password=" . self::$password;
+        $dsn = "pgsql:host=" . self::$host . ";dbname=" . self::$dbname;
 
         try {
-            $this->connexion = new PDO($dsn);
+            $this->connexion = new PDO($dsn, self::$username, self::$password);
+            $this->connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             die("Erreur de connexion à la base de données : " . $e->getMessage());
         }
