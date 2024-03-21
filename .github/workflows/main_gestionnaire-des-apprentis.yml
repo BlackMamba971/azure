@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy PHP app to Azure Web App - gestionnaire-des-apprentis
 
 on:
@@ -16,16 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v1
         with:
           php-version: '8.2'
 
       - name: Check if composer.json exists
-        id: check_files
-        uses: andstor/file-existence-action@v1
-        with:
-          files: 'composer.json'
+        run: test -f composer.json && echo '::set-output name=files_exists::true' || echo '::set-output name=files_exists::false'
 
       - name: Run composer install if composer.json exists
         if: steps.check_files.outputs.files_exists == 'true'
@@ -35,7 +29,7 @@ jobs:
         run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: php-app
           path: release.zip
@@ -51,7 +45,7 @@ jobs:
 
     steps:
       - name: Download artifact from build job
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v2
         with:
           name: php-app
 
@@ -61,9 +55,7 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F4A95814842D454BA98207E1288247B0 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_46A859BBE93548DA86BD945FE0CF8C1E }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8BA8A51F216A4FE79D8EE5C1A228CB14 }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
@@ -71,5 +63,6 @@ jobs:
         with:
           app-name: 'gestionnaire-des-apprentis'
           slot-name: 'Production'
-          package: .
-          
+          package: .```
+
+Assurez-vous également de mettre à jour les secrets `AZURE_CREDENTIALS` dans les paramètres secrets de votre dépôt avec les informations d'identification nécessaires pour se connecter à Azure.
