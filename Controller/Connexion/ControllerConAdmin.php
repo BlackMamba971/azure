@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 use Model\Conn;
@@ -27,3 +28,34 @@ if (isset($_POST['btnRetour'])){
 
 
 ob_end_flush();
+=======
+<?php
+
+use Model\Conn;
+
+session_start();
+ob_start();
+include '../../Model/ModelConnexionAdmin.php';
+include '../../Model/ConnexionBDD.php';
+
+$conn = Conn::getInstance();
+
+// Récupérer tous les utilisateurs (adresse email, mot de passe et rôle)
+$users = selectEmailMDPRoleAdmin($conn);
+
+// Supprimer les balises HTML et PHP des données postées
+$email = htmlspecialchars($_POST['email'], ENT_QUOTES, 'UTF-8');
+$motDePasse = htmlspecialchars($_POST['mdp'], ENT_QUOTES, 'UTF-8');
+
+
+if ( isset($_POST["valider"])) {
+    authenticatedAdmin($users,$email,$motDePasse);
+}
+
+if (isset($_POST['btnRetour'])){
+    header('Location: ../../View/ViewAvConnexionAdmin.php');
+}
+
+
+ob_end_flush();
+>>>>>>> 15617da6d7e42ae0cf208f8ed00089f6b77981d3
