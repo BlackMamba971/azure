@@ -64,5 +64,3 @@ jobs:
           app-name: 'gestionnaire-des-apprentis'
           slot-name: 'Production'
           package: .```
-
-Assurez-vous également de mettre à jour les secrets `AZURE_CREDENTIALS` dans les paramètres secrets de votre dépôt avec les informations d'identification nécessaires pour se connecter à Azure.
