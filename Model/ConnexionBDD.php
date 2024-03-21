@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 namespace Model;
@@ -11,14 +10,14 @@ class Conn
 {
     private static $instance = null;
     private $connexion;
-    private static $host = 'localhost';
-    private static $dbname = 'postgres';
-    private static $username = 'postgres';
-    private static $password = 'admin';
+    private static $host = 'gestionnaire-des-apprentis.database.windows.net';
+    private static $dbname = 'gestionnaire-des-apprentis.azurewebsites.net';
+    private static $username = 'YcK7896aGsSgk2';
+    private static $password = 'aScG7Y698s2kgK';
 
     private function __construct()
     {
-        $dsn = "pgsql:host=" . self::$host . ";port=5432;dbname=" . self::$dbname . ";user=" . self::$username . ";password=" . self::$password;
+        $dsn = "pgsql:host=" . self::$host . ";port=1433;dbname=" . self::$dbname . ";user=" . self::$username . ";password=" . self::$password;
 
         try {
             $this->connexion = new PDO($dsn);
@@ -35,44 +34,4 @@ class Conn
         return self::$instance->connexion;
     }
 }
-
-=======
-<?php
-
-namespace Model;
-
-use PDO;
-use PDOException;
-
-
-class Conn
-{
-    private static $instance = null;
-    private $connexion;
-    private static $host = 'localhost';
-    private static $dbname = 'SaeS4';
-    private static $username = 'postgres';
-    private static $password = 'Dorian2004';
-
-    private function __construct()
-    {
-        $dsn = "pgsql:host=" . self::$host . ";port=5432;dbname=" . self::$dbname . ";user=" . self::$username . ";password=" . self::$password;
-
-        try {
-            $this->connexion = new PDO($dsn);
-        } catch (PDOException $e) {
-            die("Erreur de connexion à la base de données : " . $e->getMessage());
-        }
-    }
-
-    public static function getInstance()
-    {
-        if (self::$instance === null) {
-            self::$instance = new self();
-        }
-        return self::$instance->connexion;
-    }
-}
-
->>>>>>> 15617da6d7e42ae0cf208f8ed00089f6b77981d3
 ?>
