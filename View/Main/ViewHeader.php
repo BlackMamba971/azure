@@ -54,13 +54,13 @@ $root ='../';
                     </li>
                     <li>
                         <div class="dropdown">
-                            <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/View<?php echo $_SESSION['role'] ?>Entreprise.php'" name="entreprise" value="Entreprise" class="btnCreation">Entreprise</button>
+                            <button type="button" onclick="window.location.href ='../Entreprise/View<?php echo $_SESSION['role'] ?>Entreprise.php'" name="entreprise" value="Entreprise" class="btnCreation">Entreprise</button>
                             <div class="dropdown-content">
-                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/ViewAjoutEntreprise.php'" name="entreprise" value="Entreprise" class="item">Créer une entreprise</button>
-                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/View<?php echo $_SESSION['role'] ?>Entreprise.php'" name="entreprise" value="Entreprise" class="item">Rechercher une entreprise</button>
+                                <button type="button" onclick="window.location.href ='Entreprise/ViewAjoutEntreprise.php'" name="entreprise" value="Entreprise" class="item">Créer une entreprise</button>
+                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>Entreprise/View<?php echo $_SESSION['role'] ?>Entreprise.php'" name="entreprise" value="Entreprise" class="item">Rechercher une entreprise</button>
 
-                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Offre/ViewAjoutOffre.php'" name="Offre" value="Offre" class="item">Créer une offre</button>
-                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Entreprise/View<?php echo $_SESSION['role'] ?>Entreprise.php'" name="Offre" value="Offre" class="item">Rechercher une offre</button>
+                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>Offre/ViewAjoutOffre.php'" name="Offre" value="Offre" class="item">Créer une offre</button>
+                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>Entreprise/View<?php echo $_SESSION['role'] ?>Entreprise.php'" name="Offre" value="Offre" class="item">Rechercher une offre</button>
                             </div>
                         </div>
                     </li>
@@ -69,10 +69,10 @@ $root ='../';
                         echo ('
                         <li>
                             <div class="dropdown">
-                                <button type="button" onclick="window.location.href =\'/' . $root . '/View/Personnel/ViewAdminAdministration.php\'" name="administration" value="administration" class="btnCreation">Administration</button>
+                                <button type="button" onclick="window.location.href =\'/' . $root . 'Personnel/ViewAdminAdministration.php\'" name="administration" value="administration" class="btnCreation">Administration</button>
                                 <div class="dropdown-content">
-                                    <button type="button" onclick="window.location.href =\'/' . $root . '/View/Personnel/ViewAjoutAdministration.php\'" name="administration" value="administration" class="item">Créer un membre du personnel</button>
-                                    <button type="button" onclick="window.location.href =\'/' . $root . '/View/Personnel/ViewAdminAdministration.php\'" name="administration" value="administration" class="item">Voir les membres du personnel</button>
+                                    <button type="button" onclick="window.location.href =\'/' . $root . 'Personnel/ViewAjoutAdministration.php\'" name="administration" value="administration" class="item">Créer un membre du personnel</button>
+                                    <button type="button" onclick="window.location.href =\'/' . $root . 'Personnel/ViewAdminAdministration.php\'" name="administration" value="administration" class="item">Voir les membres du personnel</button>
                                 </div>
                             </div>
                         </li>
