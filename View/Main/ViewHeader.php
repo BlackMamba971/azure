@@ -1,5 +1,5 @@
 <?php
-$root = basename($_SERVER['DOCUMENT_ROOT']);
+$root ='../';
 ?>
 <link rel="stylesheet" href="../../asserts/css/header.css">
 
@@ -33,22 +33,22 @@ $root = basename($_SERVER['DOCUMENT_ROOT']);
 </div>
 <header class="header">
     <div class="logo-container">
-        <img src="/<?php echo $root ?>/asserts/img/logo.png" class="logo">
+        <img src="../../asserts/img/logo.png" class="logo">
     </div>
 
     <div class="menu-container">
         <nav>
-            <form method="post" action="/<?php echo $root ?>/Controller/Connexion/ControllerBtnDeco.php">
+            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
                 <ul class="vertical-menu">
                     <li>
-                        <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Main/View<?php echo $_SESSION['role'] ?>Main.php'" name="accueil" value="Accueil" class="btnCreation">  Accueil </button>
+                        <button type="button" onclick="window.location.href ='../View/Main/View<?php echo $_SESSION['role'] ?>Main.php'" name="accueil" value="Accueil" class="btnCreation">  Accueil </button>
                     </li>
                     <li>
                         <div class="dropdown">
-                            <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Etudiant/View<?php echo $_SESSION['role'] ?>Etu.php'" name="etudiant" value="Etudiant" class="btnCreation">Etudiant</button>
+                            <button type="button" onclick="window.location.href ='../View/Etudiant/View<?php echo $_SESSION['role'] ?>Etu.php'" name="etudiant" value="Etudiant" class="btnCreation">Etudiant</button>
                             <div class="dropdown-content">
-                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Etudiant/ViewAjoutEtudiant.php'" name="etudiant" value="Etudiant" class="item">Créer un étudiant</button>
-                                <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Etudiant/View<?php echo $_SESSION['role'] ?>Etu.php'" name="etudiant" value="Etudiant" class="item">Rechercher un étudiant</button>
+                                <button type="button" onclick="window.location.href ='../View/Etudiant/ViewAjoutEtudiant.php'" name="etudiant" value="Etudiant" class="item">Créer un étudiant</button>
+                                <button type="button" onclick="window.location.href ='..//View/Etudiant/View<?php echo $_SESSION['role'] ?>Etu.php'" name="etudiant" value="Etudiant" class="item">Rechercher un étudiant</button>
                             </div>
                         </div>
                     </li>
