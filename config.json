@@ -1,6 +1,6 @@
 {
-    "host": "YcK7896aGsSgk2",
-    "dbname": "postgres",
-    "username": "postgres",
+    "host": "gestionnaire-des-apprentis",
+    "dbname": "gestionnaire-des-apprentis.database.windows.net",
+    "username": "YcK7896aGsSgk2",
     "password": "aScG7Y698s2kgK"
 }
