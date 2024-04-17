@@ -118,7 +118,7 @@ $root = '../';
                 <li id="account-photo2">
                     <img id="photo2" src="/<?php echo $root ?>/asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
                     <div id="account-dropdown2">
-                        <form method="post" action="/<?php echo $root ?>/Controller/Connexion/ControllerBtnDeco.php">
+                        <form method="post" ">
                             <input class="" name="compte" type="submit" value="Mon compte">
                             <input class="" name="deco" type="submit" value="Se déconnecter">
                         </form>
