@@ -41,14 +41,14 @@ $root ='../';
             <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
                 <ul class="vertical-menu">
                     <li>
-                        <button type="button" onclick="window.location.href ='../View/Main/View<?php echo $_SESSION['role'] ?>Main.php'" name="accueil" value="Accueil" class="btnCreation">  Accueil </button>
+                        <button type="button" onclick="window.location.href ='View/Main/View<?php echo $_SESSION['role'] ?>Main.php'" name="accueil" value="Accueil" class="btnCreation">  Accueil </button>
                     </li>
                     <li>
                         <div class="dropdown">
-                            <button type="button" onclick="window.location.href ='../View/Etudiant/View<?php echo $_SESSION['role'] ?>Etu.php'" name="etudiant" value="Etudiant" class="btnCreation">Etudiant</button>
+                            <button type="button" onclick="window.location.href ='View/Etudiant/View<?php echo $_SESSION['role'] ?>Etu.php'" name="etudiant" value="Etudiant" class="btnCreation">Etudiant</button>
                             <div class="dropdown-content">
-                                <button type="button" onclick="window.location.href ='../View/Etudiant/ViewAjoutEtudiant.php'" name="etudiant" value="Etudiant" class="item">Créer un étudiant</button>
-                                <button type="button" onclick="window.location.href ='..//View/Etudiant/View<?php echo $_SESSION['role'] ?>Etu.php'" name="etudiant" value="Etudiant" class="item">Rechercher un étudiant</button>
+                                <button type="button" onclick="window.location.href ='View/Etudiant/ViewAjoutEtudiant.php'" name="etudiant" value="Etudiant" class="item">Créer un étudiant</button>
+                                <button type="button" onclick="window.location.href ='View/Etudiant/View<?php echo $_SESSION['role'] ?>Etu.php'" name="etudiant" value="Etudiant" class="item">Rechercher un étudiant</button>
                             </div>
                         </div>
                     </li>
@@ -118,7 +118,7 @@ $root ='../';
                 <li id="account-photo2">
                     <img id="photo2" src="/<?php echo $root ?>/asserts/img/utilisateur.png" alt="Image de l'utilisateur" class="utilisateur">
                     <div id="account-dropdown2">
-                        <form method="post" action="/<?php echo $root ?>/Controller/Connexion/ControllerBtnDeco.php">
+                        <form method="post" action="/Controller/Connexion/ControllerBtnDeco.php">
                             <input class="" name="compte" type="submit" value="Mon compte">
                             <input class="" name="deco" type="submit" value="Se déconnecter">
                         </form>
