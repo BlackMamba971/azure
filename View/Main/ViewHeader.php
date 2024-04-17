@@ -1,6 +1,7 @@
 <?php
 $root = basename($_SERVER['DOCUMENT_ROOT']);
 ?>
+<link rel="stylesheet" href="../../asserts/css/header.css">
 
 
 <div class="burger-menu" id="burgerMenu" style="display: none;">
