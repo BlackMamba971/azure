@@ -1,5 +1,5 @@
 <?php
-$root ='../';
+$root ='';
 ?>
 <link rel="stylesheet" href="../../asserts/css/header.css">
 
