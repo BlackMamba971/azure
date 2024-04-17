@@ -1,0 +1,163 @@
+/* Style de base pour le formulaire */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#formulaire {
+    width: 400px;
+    margin: 20px auto;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 400px;
+    padding: 20%;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style des champs de saisie */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.button {
+    text-align: center; /* Centrer le contenu du conteneur */
+    margin-top: 20px; /* Ajouter un espace au-dessus du bouton si nécessaire */
+}
+/* Style pour le bouton d'enregistrement */
+#ajoutEntreprise {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Supprimer les puces des listes à puces */
+ul {
+    list-style: none;
+    padding: 10px;
+}
+
+#formulaireAjoutEtudiant {
+    position: absolute;
+    top: 10px;
+}
+
+h1 {
+    color: #0f9bb4;
+    text-align: center;
+}
+
+.error-message {
+    color: red;
+}
+
+.btnRetour{
+
+    text-decoration: none;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    background-color: #808080; /* Fond transparent */
+    border: none; /* Supprimer le contour */
+    font-family: Arial, sans-serif; /* Changer la police d'écriture en Arial */
+    font-size: 16px; /* Taille de la police */
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 110px;
+    height: 45px;
+    border-radius: 45px;
+    transition: box-shadow 0.3s ease;
+    font-weight: bold;
+    z-index: 999;
+
+}
+
+.btnRetour:hover{
+
+    text-decoration: none;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    transform: translate(-50%, -50%);
+    background-color: #808080; /* Fond transparent */
+    border: none; /* Supprimer le contour */
+    font-family: Arial, sans-serif; /* Changer la police d'écriture en Arial */
+    font-size: 16px; /* Taille de la police */
+    color: black;
+    cursor: pointer;
+    border-radius: 45px;
+    box-shadow: 0 0 10px #333333;
+    transition: box-shadow 0.3s ease;
+    font-weight: bold;
+    z-index: 999;
+
+}
+
+#ajoutEntreprise {
+    background-color: #0f9bb4;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 45px;
+    font-weight: bold;
+
+}
+
+#ajoutEntreprise:hover {
+    background-color: #0f9bb4;
+    border: none;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 10px;
+    color: black;
+    cursor: pointer;
+    border-radius: 45px;
+    box-shadow: 0 0 10px #333333;
+    transition: box-shadow 0.3s ease;
+    font-weight: bold;
+}
+
+.erreur-message {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}
