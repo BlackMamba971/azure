@@ -38,7 +38,7 @@ $root = '../';
 
     <div class="menu-container">
         <nav>
-            <form method="post" action="Controller/Connexion/ControllerBtnDeco.php">
+            <form method="post" action="../../Controller/Connexion/ControllerBtnDeco.php">
                 <ul class="vertical-menu">
                     <li>
                         <button type="button" onclick="window.location.href ='/<?php echo $root ?>/View/Main/View<?php echo $_SESSION['role'] ?>Main.php'" name="accueil" value="Accueil" class="btnCreation">  Accueil </button>
