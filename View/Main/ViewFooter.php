@@ -1,5 +1,5 @@
 <?php
-$root = basename($_SERVER['DOCUMENT_ROOT']);
+$root = '../';
 ?>
 
 <link rel="stylesheet" href="/<?php echo $root ?>/asserts/css/footer.css">
