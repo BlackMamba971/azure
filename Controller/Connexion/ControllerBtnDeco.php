@@ -4,7 +4,7 @@ ob_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$root = basename($_SERVER['DOCUMENT_ROOT']);
+$root = '../';
 
 if (isset($_POST['deco'])){
 
